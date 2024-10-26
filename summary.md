@@ -4,12 +4,11 @@ Date Created: 10/26/2024
 
 Date Modified: 10/26/2024
 
-Required R packages: tidyverse, dplyr, ggplot2, sf, shiny, styler
+Required R packages: tidyverse, dplyr, ggplot2, sf, lubridate, styler
 
 Version of R used: 2023-03-15 (Version 4.2.3)
 
-Summary of code: question_2.R loads the two datasets (.csv) and one zipfile. 
-After converting the .csv to sf files and the .zip to .shp files, I created two choropleths by combining each sf file with the shape file to indicate specific locations of public schools and speed cameras in Chicago.
+Summary of code: question_2.R loads the two datasets (.csv) and one shapefile: public_schools, speed_cameras, and zip_codes. Data wrangling was involved for the speed_cameras dataset to correctly change the date format for further plotting analysis. After converting the .csv to sf files, I created two choropleths by combining each sf file with the shape file to indicate specific locations of public schools and speed cameras in Chicago.
 Each choropleth is committed to the current repository by.png file.
 
 Note: In the dataset for the employment share by industry, values of (T) and (D) stand for the estimates being covered for confidential issues. I've handled those values as NA. The functions and plots created are as follows:
@@ -18,8 +17,8 @@ converting_to_sf: A function to convert the .csv files to sf files
 
 choropleth_public_schools: a choropleth indicating the location of public schools by safety scores in Chicago. NA values in the "Safety.Score" variable were filtered out to show clear visualization.
 
-choropleth_speed_cameras: a choropleth indicating the location of speed cameras by the number of active days in Chicago. 
-The variable "active_days" was created to calculate the number of days for each speed camera with the given variable "GO.LIVE.DATE" indicating the date each camera started to be active.
+choropleth_speed_cameras: a choropleth indicating the location of speed cameras by Years Active in Chicago. 
+The variable "years_active" was created to calculate each speed camera's duration since GO.LIVE.DATE in years.
 
 The R file should be run in order from top to bottom. Note that the current directory in R needs to be set to the directory containing the problem-set-2-chaeyeonguc folder.
 
