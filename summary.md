@@ -4,7 +4,7 @@ Date Created: 10/26/2024
 
 Date Modified: 10/26/2024
 
-Required R packages: tidyverse, dplyr, ggplot2, sf, lubridate, styler
+Required R packages: tidyverse, dplyr, ggplot2, sf, shiny, lubridate, styler
 
 Version of R used: 2023-03-15 (Version 4.2.3)
 
