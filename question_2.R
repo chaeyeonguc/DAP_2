@@ -49,7 +49,7 @@ choropleth_public_schools <- ggplot() +
   theme_minimal()
 
 ### Saving as .png file
-ggsave("choropleth_public_schools.png", plot = choropleth_public_schools)
+ggsave("choropleth_public_schools.png", path = getwd(), plot = choropleth_public_schools)
 
 ## Creating a chorpleth for speed cameras
 ### Creating new variable for the number of days each camera has been active
@@ -72,6 +72,6 @@ choropleth_speed_cameras <- ggplot() +
   theme_minimal()
 
 ### Saving as .png file
-ggsave("choropleth_speed_cameras.png", plot = choropleth_speed_cameras)
+ggsave("choropleth_speed_cameras.png", path = getwd(), plot = choropleth_speed_cameras)
 
 
