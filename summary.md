@@ -15,6 +15,7 @@ Each choropleth is committed to the current repository by.png file.
 Note: In the dataset for the employment share by industry, values of (T) and (D) stand for the estimates being covered for confidential issues. I've handled those values as NA. The functions and plots created are as follows:
 
 converting_to_sf: A function to convert the .csv files to sf files
+
 choropleth_public_schools: a choropleth indicating the location of public schools by safety scores in Chicago. NA values in the "Safety.Score" variable were filtered out to show clear visualization.
 choropleth_speed_cameras: a choropleth indicating the location of speed cameras by the number of active days in Chicago. 
 The variable "active_days" was created to calculate the number of days for each speed camera with the given variable "GO.LIVE.DATE" indicating the date each camera started to be active.
