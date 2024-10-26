@@ -1,0 +1,34 @@
+Chaeyeong Park
+
+Date Created: 10/26/2024
+
+Date Modified: 10/26/2024
+
+Required R packages: tidyverse, dplyr, ggplot2, sf, shiny, styler
+
+Version of R used: 2023-03-15 (Version 4.2.3)
+
+Summary of code: question_2.R loads the two datasets (.csv files), and one shapefile from the City of Chicago [Data Portal](https://data.cityofchicago.org). 
+
+After converting the two .csv files to sf files, I created the two choropleth
+
+Note: In the dataset for the employment share by industry, values of (T) and (D) stand for the estimates being covered for confidential issues. I've handled those values as NA. The functions and plots created are as follows:
+
+converting_to_sf: A function to convert the .csv files to sf files 
+top_states: A function to find top states for the share of the total employment with 3 parameters (excepting data): n(the number of top states to find), industry, year
+top_states_share_for_three_industries: for-loop to plot top states' share each year (2000 and 2017) in the three industries (manufacturing, Farming, Information) with the given conditions.
+distribution: A function that plots the distribution of employment shares for a given industry each year (2000 and 2017). It also plots the distribution of change in employment shares from 2000 to 2017 for a given industry. Each plot additionally shows the mean of distribution and value for a given state. This function has two parameters (excepting data): state and industry.
+The R file should be run in order from top to bottom. Note that the current directory in R needs to be set to the directory containing the problem-set-1-chaeyeonguc folder.
+
+Explanation of original data source: 
+The file labeled "public_schools.csv" has various information of public schools in Chicago, including locations, zip codes, longitude/langitude and safety scores.
+It is exported from (https://data.cityofchicago.org/Education/Chicago-Public-Schools-Progress-Report-Cards-2011-/9xs2-f89t/about_data).
+The file labled "speed_cameras.csv" are information of speed cameras in Chicago, including each camera's location, longitude/langitude and GO-Live dates which indicates when each speed camera
+started to be active.
+exported from (https://data.cityofchicago.org/Transportation/Speed-Camera-Locations/4i42-qv3h/about_data).
+The shapefile is "zip_codes", where the .zip file is unzipped and the .shp file is loaded. The original .zip file is exported from (https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-ZIP-Codes/gdcf-axmw)
+The file labeled "total" has the total employment per state for the years 2000 and 2017. The file labeled "by industry" has employment per industry in each of 10 industries per state for the same years.
+
+The file labeled "data" is the merged file of employment across industries and states after cleaning the data from those two datasets, merging them, and calculating the share of the total employment for each industry. — employment shares in 2010 and 2017 across states and industries: data.csv (Contains data about state, year, employment share by each industry column)
+
+ Include 2-4 sentences in the README describing each specific choropleth is about. Also include in your README a description of the datasets and shapefile.
