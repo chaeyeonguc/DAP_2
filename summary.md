@@ -29,8 +29,7 @@ speed_cameras.csv is exported from (https://data.cityofchicago.org/Transportatio
 and Boundaries - ZIP Codes.zip  is exported from (https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-ZIP-Codes/gdcf-axmw)
 
 The file labeled "public_schools" is a .csv file containing various information about Chicago's public schools, including locations, zip codes, latitude/longitude, and safety scores.
+
 The file labeled "speed_cameras" is .csv file containing information about speed cameras in Chicago, including each camera's location, longitude/langitude and "GO-Live dates" which indicates when each speed camera started to be active.
+
 The file labeled "zip_codes" is created by unzipping Boundaries - ZIP Codes.zip and the loading .shp one.
-
-
- Include 2-4 sentences in the README describing each specific choropleth is about. Also include in your README a description of the datasets and shapefile.
