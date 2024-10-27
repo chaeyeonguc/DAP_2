@@ -8,11 +8,10 @@ Required R packages: tidyverse, dplyr, ggplot2, sf, shiny, lubridate, styler, pl
 
 Version of R used: 2023-03-15 (Version 4.2.3)
 
-Summary of code: question_2.R loads the two datasets (.csv) and one shapefile: public_schools, speed_cameras, and zip_codes. Data wrangling was involved for the speed_cameras dataset to correctly change the date format for further plotting analysis. After converting the .csv to sf files, I created two choropleths by combining each sf file with the shape file to indicate specific locations of public schools and speed cameras in Chicago. Each choropleth is committed to the current repository by.png file.
-app.R
+Summary of code: question_2.R loads the two datasets (.csv) and one shapefile: public_schools, speed_cameras, and zip_codes. Data wrangling was involved for the speed_cameras dataset to change the date format accordingly for further plotting analysis. After converting the .csv to sf files, I created two choropleths by combining each file with the shape file to indicate all locations of public schools and speed cameras in Chicago. Each choropleth is committed to the current repository by .png file.
+app.R shows a [shinyapp](https://chaeyeong.shinyapps.io/PublicSchoolsApp/) for the public schools in Chicago, which is converted from the plot "Location of Public Schools by Safety Scores and School Name in Chicago." The UI consists of a dynamic input, which additionally allows users to select school names as well as safety scores. After entering a safety score, the school dropdown shows a list of public schools over that safety score, such that the plot interactively presents a specific location of the public school by safety score and school name.  
 
-
-Note: In the dataset for the employment share by industry, values of (T) and (D) stand for the estimates being covered for confidential issues. I've handled those values as NA. The functions and plots created are as follows:
+Note:The functions and plots created in question_2.R are as follows:
 
 converting_to_sf: A function to convert the .csv files to sf files
 
