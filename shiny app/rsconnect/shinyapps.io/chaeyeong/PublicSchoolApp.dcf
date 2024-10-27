@@ -1,0 +1,13 @@
+name: PublicSchoolApp
+title: PublicSchoolApp
+username: chaeyeong
+account: chaeyeong
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13142989
+bundleId: 9274895
+url: https://chaeyeong.shinyapps.io/PublicSchoolApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData

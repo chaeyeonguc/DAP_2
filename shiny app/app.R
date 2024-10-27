@@ -1,4 +1,4 @@
-[Shinyapp](https://chaeyeong.shinyapps.io/PublicSchoolsApp/)
+[shinyapp](https://chaeyeong.shinyapps.io/PublicSchoolApp/)
 
 # Load packages
 library(tidyverse)
@@ -11,7 +11,7 @@ library(plotly)
 
 # Define ui
 ui <- fluidPage(
-  titlePanel("Location of Public Schools by Safety Scores in Chicago"),
+  titlePanel("Location of Public School by Safety Scores and School Name in Chicago"),
   sidebarLayout(
     sidebarPanel(
       textInput(
@@ -45,7 +45,7 @@ server <- function(input, output, session) {
   ## call the resulting dataframe public_schools_sf_updated
   observeEvent(public_schools_sf_updated(), {
     school_choices <- unique(public_schools_sf_updated()$`Name of School`)
-    updateSelectInput(inputId = "school_input", choices = school_choices)
+    updateSelectInput(inputId = "school_input", choices = c("All Schools" = "", school_choices))
   })
 
   ## Render the plot
@@ -53,12 +53,16 @@ server <- function(input, output, session) {
     ggplot() +
       geom_sf(data = zip_codes) +
       geom_sf(
-        data = public_schools_sf_updated() %>% filter(`Name of School` == input$school_input),
+        data = if (input$school_input == "") {
+          public_schools_sf_updated() 
+        } else {
+          public_schools_sf_updated() %>% filter(`Name of School` == input$school_input)  
+        },
         aes(fill = `Safety Score`), shape = 21, size = 2
       ) +
       scale_fill_gradient(low = "white", high = "blue") +
       labs(
-        title = "Public Schools by Safety Scores in Chicago",
+        title = "Location of Public School by Safety Scores and School Name in Chicago",
         x = "Longitude", y = "Latitude",
         fill = "Safety Score",
         caption = "Source: City of Chicago"
